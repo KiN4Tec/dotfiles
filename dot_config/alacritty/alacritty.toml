@@ -1,0 +1,30 @@
+import = ["~/.config/alacritty/nord/src/nord.toml"]
+live_config_reload = true
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "UbuntuMono Nerd Font"
+
+[shell]
+program = "/usr/bin/fish"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+dynamic_title = true
+opacity = 0.95
+title = "Alacritty"
+
+[window.class]
+general = "alacritty"
+instance = "alacritty"
+
+[window.padding]
+x = 5
+y = 5
