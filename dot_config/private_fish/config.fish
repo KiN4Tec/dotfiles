@@ -10,3 +10,8 @@ set -x PATH "$HOME/.cargo/bin:$PATH"
 
 # Disable the greeting message
 set -g fish_greeting
+
+# Enable Zoxide if available
+if command -sq zoxide
+    zoxide init fish | source
+end

@@ -15,3 +15,6 @@ alias lla = ls -la
 
 # Load the starship prompt
 use ~/.cache/starship/init.nu
+
+# Load zoxide
+source ~/.local/share/nushell/zoxide.nu
