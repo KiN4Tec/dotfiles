@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # This is an abstraction of ~/.bashrc executed/sourced by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) for examples
 #
