@@ -19,3 +19,4 @@ function fish_prompt --description 'Informative prompt'
             (set_color normal)
     end
 end
+

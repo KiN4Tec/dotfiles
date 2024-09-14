@@ -43,3 +43,4 @@ disabled = false
 format = "[$time]($style)"
 time_format = "%I:%M:%S %p"
 style = "red"
+
