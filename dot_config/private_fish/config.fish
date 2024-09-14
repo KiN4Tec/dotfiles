@@ -15,9 +15,4 @@ if status is-interactive
     starship init fish | source
 end
 
-if command -sq zoxide
-    zoxide init fish | source
-end
-
 set -g fish_greeting "Welcome back commander"
-

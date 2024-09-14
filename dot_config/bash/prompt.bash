@@ -48,4 +48,3 @@ PS1="\n$PS1"
 
 # Use the Starship prompt (if available)
 [[ -n "$(starship --version)" ]] && eval "$(starship init bash)"
-
