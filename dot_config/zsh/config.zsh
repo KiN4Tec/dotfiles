@@ -1,10 +1,6 @@
-command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
+NASHAT_CONFIG_DIR="$HOME/.config/zsh"
 
-alias cd..='cd ..'
-alias ls='ls --color=always'
-alias ll='ls -l'
-alias la='ls -a'
-alias lA='ls -A'
-alias lla='ls -la'
-alias llA='ls -lA'
+source $NASHAT_CONFIG_DIR/env.zsh
+source $NASHAT_CONFIG_DIR/prompt.zsh
+source $NASHAT_CONFIG_DIR/aliases.zsh
 
