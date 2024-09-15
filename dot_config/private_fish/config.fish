@@ -16,3 +16,4 @@ if status is-interactive
 end
 
 set -g fish_greeting "Welcome back commander"
+
