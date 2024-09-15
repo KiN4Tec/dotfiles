@@ -14,7 +14,7 @@ case $- in
 esac
 
 NASHAT_CONFIG_PATH="$(dirname ${BASH_SOURCE})"
-NASHAT_CONFIG_RELATIVE_DIRS="aliases completions"
+NASHAT_CONFIG_RELATIVE_DIRS="aliases completions functions"
 
 source "$NASHAT_CONFIG_PATH/env.bash"
 source "$NASHAT_CONFIG_PATH/prompt.bash"
@@ -24,7 +24,7 @@ source "$NASHAT_CONFIG_PATH/prompt.bash"
 
 for d in $NASHAT_CONFIG_RELATIVE_DIRS
 do
-    for f in $NASHAT_CONFIG_PATH/$d/*
+    for f in $NASHAT_CONFIG_PATH/$d/*.bash
     do
         source $f
     done
