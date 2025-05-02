@@ -20,7 +20,21 @@ shopt -s globstar
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# External Package Managers
+
+# NPM
+export NPM_CONFIG_PREFIX="$HOME/.local/share/npm"
+if [ -d NPM_CONFIG_PREFIX ] && [[ ":$PATH:" != *":$NPM_CONFIG_PATH:"* ]]; then
+    PATH="$PATH:$NPM_CONFIG_PATH"
+fi
+
+# Yarn
+[ -n $(command -v yarn) ] && export PATH="$(yarn global bin):$PATH"
+
+# Homebrew
 if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 fi
 
+# Cargo
+[ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
