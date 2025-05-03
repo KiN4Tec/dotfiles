@@ -22,19 +22,34 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # External Package Managers
 
-# NPM
-export NPM_CONFIG_PREFIX="$HOME/.local/share/npm"
-if [ -d NPM_CONFIG_PREFIX ] && [[ ":$PATH:" != *":$NPM_CONFIG_PATH:"* ]]; then
-    PATH="$PATH:$NPM_CONFIG_PATH"
-fi
-
-# Yarn
-[ -n $(command -v yarn) ] && export PATH="$(yarn global bin):$PATH"
-
-# Homebrew
-if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-fi
+source "$NASHAT_CONFIG_PATH/functions/path_append.bash"
 
 # Cargo
-[ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
+if command -v cargo 2>&1 >/dev/null
+then
+    path_append "$HOME/.cargo/bin"
+fi
+
+# Homebrew
+if [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+    export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
+    export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
+    export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
+    path_append "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin"
+
+    if [ -d "/home/linuxbrew/.linuxbrew/share/info" ] && \
+       [[ ":$INFOPATH:" != *":/home/linuxbrew/.linuxbrew/share/info:"* ]]
+    then
+        INFOPATH="${INFOPATH:+"$INFOPATH:"}/home/linuxbrew/.linuxbrew/share/info"
+    fi
+fi
+
+# NPM
+export NPM_CONFIG_PREFIX="$HOME/.local/share/npm"
+path_append "$NPM_CONFIG_PREFIX"
+
+# Yarn
+if command -v yarn 2>&1 >/dev/null
+then
+    path_append "$(yarn global bin)"
+fi
