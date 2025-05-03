@@ -3,8 +3,6 @@ typeset -U path PATH
 
 # External Package Managers
 
-source "$NASHAT_CONFIG_PATH/functions/path_add.bash"
-
 # Cargo
 if command -v cargo 2>&1 >/dev/null
 then
