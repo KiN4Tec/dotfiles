@@ -23,6 +23,11 @@ if [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
     fi
 fi
 
+# Python pipx
+if command -v pipx 2>&1 >/dev/null
+    path+=("$(pipx environment --value PIPX_BIN_DIR)")
+end
+
 # NPM
 export NPM_CONFIG_PREFIX="$HOME/.local/share/npm"
 path+=("$NPM_CONFIG_PREFIX")
