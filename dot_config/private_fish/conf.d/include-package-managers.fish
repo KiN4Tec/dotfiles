@@ -25,7 +25,7 @@ end
 # NPM
 set --global --export NPM_CONFIG_PREFIX $HOME/.local/share/npm
 if test -d "$NPM_CONFIG_PREFIX"
-    fish_add_path --append --path "$NPM_CONFIG_PREFIX"
+    fish_add_path --append --path "$NPM_CONFIG_PREFIX/bin"
 end
 
 # Yarn

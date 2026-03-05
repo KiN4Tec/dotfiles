@@ -51,7 +51,7 @@ end
 
 # NPM
 export NPM_CONFIG_PREFIX="$HOME/.local/share/npm"
-path_append "$NPM_CONFIG_PREFIX"
+path_append "$NPM_CONFIG_PREFIX/bin"
 
 # Yarn
 if command -v yarn 2>&1 >/dev/null
